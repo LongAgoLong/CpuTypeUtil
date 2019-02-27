@@ -1,10 +1,13 @@
 package com.leo.libcputype;
 
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
+
 import java.io.File;
 
-public final class CpuTypeUtil {
-    private CpuTypeUtil() {
+public final class CpuUtil {
+    private CpuUtil() {
     }
 
     /**
@@ -31,16 +34,5 @@ public final class CpuTypeUtil {
             return CpuType.ARM64_V8A;
         }
         return CpuType.ARMEABI_V7A;
-    }
-    
-     /**
-     * 判断 so 文件是否存在
-     *
-     * @return fileName so 文件名（包括.so 扩展名）
-     */
-    public stastic boolean isSoFileExists(@NonNull String fileName){
-        File dir = context.getDir("libs", Context.MODE_PRIVATE);
-        File soFile = new File(dir, fileName);
-        return soFile.exists() && soFile.isFile() && soFile.length() > 0;
     }
 }

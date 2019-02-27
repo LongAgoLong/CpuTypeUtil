@@ -16,8 +16,20 @@ import java.net.URL;
  * at 下午2:13
  * so文件下载保存工具
  */
-public final class SoDownloadUtil {
-    private SoDownloadUtil() {
+public final class SoUtil {
+    private SoUtil() {
+    }
+
+
+    /**
+     * 判断 so 文件是否存在
+     *
+     * @return fileName so 文件名（包括.so 扩展名）
+     */
+    public static boolean isSoFileExists(Context context, @NonNull String fileName) {
+        File dir = context.getDir("libs", Context.MODE_PRIVATE);
+        File soFile = new File(dir, fileName);
+        return soFile.exists() && soFile.isFile() && soFile.length() > 0;
     }
 
     /**
