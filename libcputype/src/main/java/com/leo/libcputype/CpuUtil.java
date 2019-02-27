@@ -1,10 +1,6 @@
 package com.leo.libcputype;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
-
-import java.io.File;
 
 public final class CpuUtil {
     private CpuUtil() {

@@ -14,7 +14,7 @@ import java.net.URL;
  * Create by MaZaizhong
  * on 2019/2/26
  * at 下午2:13
- * so文件下载保存工具
+ * so文件工具
  */
 public final class SoUtil {
     private SoUtil() {
@@ -26,7 +26,7 @@ public final class SoUtil {
      *
      * @return fileName so 文件名（包括.so 扩展名）
      */
-    public static boolean isSoFileExists(Context context, @NonNull String fileName) {
+    public static boolean isSoExists(Context context, @NonNull String fileName) {
         File dir = context.getDir("libs", Context.MODE_PRIVATE);
         File soFile = new File(dir, fileName);
         return soFile.exists() && soFile.isFile() && soFile.length() > 0;
